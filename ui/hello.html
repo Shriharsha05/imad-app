@@ -1,2 +1,85 @@
 <html>
+<head>
+    <title>Animation</title>
+
+	<style>
+		body{
+		background-color: rgb(38,27,44);
+		}
+	</style>
+    
+    <meta name="viewport" content="width-device-width, initial-scale=1" />
+</head>
+
+<body>
+	<canvas id="mycanvas"></canvas> 
+	<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+	<script> 
+		var sketchProc = function(processingInstance) {
+     				with (processingInstance) {
+        			size(1267,670); 
+       				frameRate(30);
+//my code below
+                	var i=0,j=0,k=0;
+					var x=500;
+					var y=2,z=2;
+					noStroke();
+					var facesize=250;
+					var xPos=500;
+					var yPos=300;
+					var eyesize= 30;
+					var mouthSize =130;
+					draw = function()
+					{
+
+						background(205,0,0);
+						fill(255,255,0);
+						ellipse(xPos,yPos,facesize,facesize);
+
+						fill(0,0,0);
+						ellipse(xPos-40,yPos-50,eyesize,eyesize);
+						ellipse(xPos+80,yPos-50,eyesize,eyesize);
+
+						fill(255,0,0);
+						ellipse(xPos+30,yPos+40,mouthSize,mouthSize);
+
+						textSize(20);
+						fill(i++, j++, k++);
+						text("Hello from Winston *-*",xPos-100,yPos+150);
+					
+						if(xPos==1100)
+							{
+								y = -2;
+							}
+						if(xPos==200)
+							{
+								y = 2;
+							}
+						if(yPos==180)
+							{
+								z = 2;
+							}
+						if(yPos==530)
+							{
+								z = -2;
+							}
+
+						xPos = xPos+y; 
+						yPos = yPos+z;
+						if(i===255)
+						{
+							i=j=k=0;
+						}
+
+					};
+//my code ends here
+		}};
+		
+ 		var canvas = document.getElementById("mycanvas"); 
+  		// Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    	var processingInstance = new Processing(canvas,sketchProc); 
+    	
+	</script>
+</body>
 </html>
