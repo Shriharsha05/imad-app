@@ -5,6 +5,14 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+/* create array of objects 
+var articleName = {
+  heading : Key Loggers,
+  date : '22 December 2016',
+  
+};     */
+
+//create a function to create a htmltemplate varibale and return it ,use params.parse.articlename
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
