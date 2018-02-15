@@ -20,7 +20,9 @@ var articles = {
       
   }        
 };
- 
+
+
+var counter=0; 
 
 function createTemplate(data){
     var heading = data.heading;
@@ -54,7 +56,6 @@ function createTemplate(data){
                 </html>`;
     return htmlTemplate;
 }
-
 
 
 
@@ -92,7 +93,6 @@ app.get('/submit-name/:name', function(req,res) { // /submit-name?name=xxxx
  req.send(JSON.stringify(names)); //array to string and send
 });
 
-var counter=0;
 app.get('/:articleName', function(req,res) {
     var articleName = req.params.articleName;
  res.send(createTemplate(articles[articleName]));   
