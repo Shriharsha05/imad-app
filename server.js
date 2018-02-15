@@ -84,18 +84,19 @@ app.get('/hello', function(req,res) {
  res.sendFile(path.join(__dirname,'ui','hello.html'));   
 });
 
+
+
+app.get('/:articleName', function(req,res) {
+    var articleName = req.params.articleName;
+ res.send(createTemplate(articles[articleName]));   
+});
+
 var names=[];
 app.get('/submit-name', function(req,res) { // /submit-name?name=xxxx
  var name = req.query.name;
  names.push(name);
  //JSON:JavaScript Object Notation
  req.send(JSON.stringify(names)); //array to string and send
-});
-
-
-app.get('/:articleName', function(req,res) {
-    var articleName = req.params.articleName;
- res.send(createTemplate(articles[articleName]));   
 });
 
 /*
