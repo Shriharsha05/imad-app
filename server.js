@@ -5,14 +5,47 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-/* create array of objects 
-var articleName = {
-  heading : Key Loggers,
-  date : '22 December 2016',
-  
-};     */
 
-//create a function to create a htmltemplate varibale and return it ,use params.parse.articlename
+var articleOne = {
+  heading : 'Key Loggers',
+  date : '22 December 2016',
+  content:`<p>Key loggers are the programs which record each and every keystroke on the computer they are installed on.It can store a complete log of text entered such as passwords,text copied and pasted,websites visited etc.User wont be aware of this key-spying software.Its usually used in cyber to get passwords of users and misuse it. Key-logger monitor screen will be opened only when particular 3 or 4 key combination will be pressed simultaneously.
+		</p>` 
+}; 
+
+function createTemplate(data){
+    var heading = data.heading;
+    var content = data.content;
+    var date = data.date;
+    var htmlTemplate = `<!DOCTYPE html>
+                <html>
+                <head>
+                	<title>${heading}</title>
+                	<meta name="viewport" content="width-device-width, initial-scale=1"/>
+                	<link rel="stylesheet" type="text/css" href="/ui/style.css"/>
+                </head>
+                
+                <body>
+                	<div class="container">
+                
+                	<a href="/" id="hme_btn">Home</a>
+                	<div class="heading center">
+                		<h3>${heading}</h3>
+                	</div>
+                	<div class="date">
+                		<p>${date}<p>
+                	</div>
+                	<hr>
+                	<div>
+                		${content}	
+                	</div>
+                
+                	</div>
+                </body>
+                </html>`;
+    return htmlTemplate;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -31,7 +64,7 @@ app.get('/hello', function(req,res) {
 });
 
 app.get('/article-one', function(req,res) {
- res.sendFile(path.join(__dirname,'ui','article-one.html'));   
+ res.send(createTemplate(articleOne));   
 });
 
 app.get('/article-two', function(req,res) {
