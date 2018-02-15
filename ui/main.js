@@ -36,7 +36,7 @@ btn.onclick = function() {
     request.onreadystatechange = function(){
         
         if(request.readyState === XMLRequestReady.DONE){
-            if(request.status==200){
+            if(request.status===200){
                 var counter = request.responceText;
                  var val = document.getElementById('count');
                  val.innerHTML=counter.toString();
