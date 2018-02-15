@@ -103,7 +103,7 @@ app.get('/submit-name/:namee', function(req,res) {                 // /submit-na
  var name = req.params.namee;
  names.push(name);
  //JSON:JavaScript Object Notation
- req.send(JSON.stringify(names));   //array to string and send
+ res.send(JSON.stringify(names));   //array to string and send
 });
 
 var port = 80;
