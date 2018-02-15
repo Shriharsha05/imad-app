@@ -86,7 +86,7 @@ app.get('/hello', function(req,res) {
 });
 
 var names = [];
-app.get('/submit-name/:name', function(req,res) {                 // /submit-name?name=xxxx
+app.get('/kname/:name', function(req,res) {                 // /submit-name?name=xxxx
  var name = req.params.name;
  names.push(name);
  //JSON:JavaScript Object Notation
