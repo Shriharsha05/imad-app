@@ -15,6 +15,7 @@ var articles = {
   'article-two' : {heading : 'Whatsapp Spam',
   date : '1 November 2016',
   content:`<p> FEEL THE POWER OF PYTHON!!
+            hfghfh
 		</p>` 
       
   }        
