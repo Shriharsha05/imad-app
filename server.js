@@ -85,8 +85,8 @@ app.get('/hello', function(req,res) {
 });
 
 var names=[];
-app.get('/submit-name', function(req,res) { // /submit-name?name=xxxx
- var name = req.query.name;
+app.get('/submit-name/:name', function(req,res) { // /submit-name?name=xxxx
+ var name = req.params.name;
  names.push(name);
  //JSON:JavaScript Object Notation
  req.send(JSON.stringify(names)); //array to string and send
