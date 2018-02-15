@@ -46,3 +46,37 @@ btn.onclick = function() {
     request.open('GET','http://shriharsha05.imad.hasura-app.io/counter',true);
     request.send(null);
 };
+
+var nameEntered = document.getElementById('name');
+var nam = nameEntered.value;
+var submit = document.getElementById('submit_btn');
+
+submit.onclick = function(){
+    
+    var list = '';
+    var nameList = ['name1','name2','name3'];
+    for(var i=0;i<nameList.length;i++)
+    {
+        list += '<li>' + nameList[i] + '</li>';
+    }
+    
+    var span = document.getElementById('list_here');
+    span.innerHTML = list;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
