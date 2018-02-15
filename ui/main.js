@@ -43,4 +43,6 @@ btn.onclick = function() {
             }
         }
     };
+    request.open('GET','http://shriharsha05.imad.hasura-app.io/counter',true);
+    request.send(null);
 };
