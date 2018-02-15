@@ -16,3 +16,13 @@ function moveRight(){
 img.onclick = function(){
     var interval = setInterval(moveRight,50);
 }
+
+var counter=0;
+
+var btn = document.getElementById('btn');
+
+btn.onclick = function(){
+    counter+=1;
+    var val = document.getElementById('count');
+    val.innerHTML=counter.toString();
+}
