@@ -85,8 +85,8 @@ app.get('/hello', function(req,res) {
  res.sendFile(path.join(__dirname,'ui','hello.html'));   
 });
 
-var names=[];
-app.get('/submit-name/:name', function(req,res) { // /submit-name?name=xxxx
+var names = [];
+app.get('/submit-name/:name', function(req,res) {                 // /submit-name?name=xxxx
  var name = req.params.name;
  names.push(name);
  //JSON:JavaScript Object Notation
