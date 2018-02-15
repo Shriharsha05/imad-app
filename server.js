@@ -56,7 +56,7 @@ function createTemplate(data){
 }
 
 var counter=0;
-var names=[];
+
 
 app.get('/counter', function(req,res) {
  counter +=1;
@@ -84,7 +84,7 @@ app.get('/hello', function(req,res) {
  res.sendFile(path.join(__dirname,'ui','hello.html'));   
 });
 
-
+var names=[];
 app.get('/submit-name', function(req,res) { // /submit-name?name=xxxx
  var name = req.query.name;
  names.push(name);
