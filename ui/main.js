@@ -16,7 +16,7 @@ function moveRight(){
 img.onclick = function(){
     var interval = setInterval(moveRight,50);
 }
-
+/*
 var counter=0;
 
 var btn = document.getElementById('btn');
@@ -25,4 +25,22 @@ btn.onclick = function(){
     counter+=1;
     var val = document.getElementById('count');
     val.innerHTML=counter.toString();
-}
+}*/
+
+var btn = document.getElementById('btn');
+
+btn.onclick = function() {
+    
+    var request = new XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+        
+        if(request.readyState === XMLRequestReady.DONE){
+            if(request.status==200){
+                var counter = responceText;
+                 var val = document.getElementById('count');
+                 val.innerHTML=counter.toString();
+            }
+        }
+    };
+};
